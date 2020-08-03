@@ -9,7 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!").padding()
+        VStack {
+            TabView {
+                Rectangle().foregroundColor(.red).frame(maxHeight: 50, alignment: .top)
+                Rectangle().foregroundColor(.blue).frame(maxHeight: 50, alignment: .top)
+                Rectangle().foregroundColor(.green).frame(maxHeight: 50, alignment: .top)
+            }
+            .tabViewStyle(PageTabViewStyle())
+            .frame(maxHeight: 50)
+            Button("Push Me") { print("push me") }
+        }
     }
 }
 
